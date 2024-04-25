@@ -1,0 +1,49 @@
+query getProducts(
+  $limit: Int
+  $offset: Int
+  $search: String
+  $mfg: [String] = [""]
+  $unit: [String] = [""]
+  $type: [String] = [""]
+  $available: [String] = [""]
+) {
+  Products(
+    limit: $limit
+    offset: $offset
+    search: $search
+    filter: {
+      _and: [
+        {
+          product_manufacturer: {
+            manufacturer_category_id: { manufacturer_name: { _nin: $mfg } }
+          }
+        }
+        { product_unit: { Unit_category_id: { unit_name: { _nin: $unit } } } }
+        { product_type: { Type_category_id: { type_name: { _nin: $type } } } }
+        { available_status: { _nin: $available } }
+      ]
+    }
+  ) {
+    id
+
+    product_name_ru
+    product_name
+
+    image_url
+    slug
+
+    vend_code
+    weight
+    text_description
+
+    form_factor_image
+    sizes
+    price
+
+    analogue_text
+    included_text
+    replacement_text
+
+    available_status
+  }
+}

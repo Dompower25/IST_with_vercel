@@ -1,0 +1,19 @@
+@import 'variables';
+
+@mixin gradient_bg(
+  $border_s: 2px,
+  $border_color: $def_blue_gray,
+  $radius: 15px,
+  $non_gradient_color: $def_page_bg
+) {
+  & {
+    border-radius: $radius;
+    border: solid $border_s $border_color;
+
+    @if $non_gradient_color {
+      background: $non_gradient_color;
+    } @else {
+      background: linear-gradient(92.51deg, #2c3641 0%, $def_dark 100%);
+    }
+  }
+}

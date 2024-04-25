@@ -1,0 +1,59 @@
+@import '../scss/variables.scss';
+@import '../scss/mixins/rfs_mixins';
+
+.search_results {
+  display: flex;
+  flex-direction: column;
+
+  > .result_container {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 15px;
+
+    > .result_title_name {
+      min-width: 150px;
+      width: 150px;
+      box-sizing: border-box;
+
+      margin-right: 40px;
+
+      word-wrap: break-word;
+
+      font-weight: 500;
+      @include font-size(1.125rem);
+      line-height: 21px;
+      color: $pure_white;
+    }
+
+    > .possible_results {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+
+      > .result {
+        font-weight: 400;
+        @include font-size(1.125rem);
+        line-height: 21px;
+        color: $pure_white;
+        margin-bottom: 15px;
+        word-wrap: break-word;
+        width: 100%;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 526px) {
+  .result_container {
+    flex-direction: column;
+  }
+  .result_title_name {
+    margin: 10px auto !important;
+    text-align: center;
+  }
+
+  .possible_results {
+    margin: 0px 20px;
+  }
+}

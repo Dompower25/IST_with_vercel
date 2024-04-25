@@ -1,0 +1,153 @@
+@import '../scss/variables.scss';
+@import '../scss/mixins/textEllipsing';
+@import '../scss/mixins/rfs_mixins';
+@import '../scss/mixins/arrow_mixin';
+
+.mobileBar {
+  width: 100%;
+  height: unset;
+  padding: 7px;
+  background: $def_page_bg;
+
+  display: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  position: relative;
+
+  & .mobileBtn {
+    height: 100%;
+    margin: 0 5px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.1s ease-in background-color;
+
+    &.active {
+      background: $def_dark;
+      box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.25);
+      transition: 0.1s ease-in background-color;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    & .imageWrapper {
+      width: 24px;
+      height: 24px;
+      position: relative;
+    }
+
+    & .titleWrapper {
+      width: 100%;
+      padding: 0 10px;
+      height: 20px;
+      text-align: center;
+      color: $def_white;
+      margin-top: 7px;
+      overflow: hidden;
+      word-wrap: anywhere;
+      @include text-ellipsing($ellipsing_line: 1);
+      @include font-size(0.9rem);
+    }
+  }
+
+  &.searching {
+    height: 65px !important;
+    min-height: unset !important;
+    border-radius: 20px !important;
+
+    & > * {
+      margin-top: -10px;
+
+      & > input {
+        font-size: 1.15rem !important;
+        font-weight: 400 !important;
+        padding-right: 50px !important;
+      }
+    }
+
+    & * {
+      box-shadow: none;
+    }
+
+    & .applyAndClose {
+      position: absolute;
+
+      right: -2px;
+      bottom: -2px;
+
+      width: 46px;
+      height: 46px;
+
+      background: $def_page_bg;
+      box-shadow: 0 0 3px rgba(21, 26, 32, 0.8);
+      border-radius: 10px;
+
+      transition: 0.3s;
+
+      &:hover {
+        box-shadow: 0 0 4px $def_blue;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+
+      & .apply_ico {
+        margin-top: 22%;
+        height: 18px;
+        @include arrow($size: 3px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1399.98px) {
+  .XXL_1400 {
+    & {
+      display: flex;
+    }
+  }
+}
+
+@media screen and (max-width: 1199.98px) {
+  .XL_1200 {
+    & {
+      display: flex;
+    }
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  .LG_992 {
+    & {
+      display: flex;
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .MD_768 {
+    & {
+      display: flex;
+    }
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .SM_576 {
+    & {
+      display: flex;
+    }
+  }
+}

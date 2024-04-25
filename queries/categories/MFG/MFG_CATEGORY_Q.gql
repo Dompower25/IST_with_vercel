@@ -1,0 +1,6 @@
+query getMFGList {
+  manufacturer_category {
+    manufacturer_name
+    slug
+  }
+}

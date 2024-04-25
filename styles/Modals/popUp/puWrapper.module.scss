@@ -1,0 +1,93 @@
+@import "../../variables";
+@import "../../../components/UI/scss/mixins/scroll_mixin";
+@import "../../scss_mixins";
+
+.default_pu_bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(21, 26, 32, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  top: 0;
+  left: 0;
+
+  z-index: inherit;
+}
+
+.modalBase {
+  max-width: 100%;
+  width: fit-content;
+  position: relative;
+  background-color: $def_page_bg;
+  box-shadow: 0px 0px 7px $def_blue;
+  border-radius: 40px;
+  z-index: inherit;
+  padding-bottom: 15px;
+
+  .contentWrapper {
+    padding: 0px 37px;
+  }
+
+  .modalHeader {
+    width: 100%;
+    display: flex;
+    margin-bottom: 15px;
+    padding: 37px 37px 15px;
+    flex-direction: column;
+    padding-right: 30px;
+
+    font-style: normal;
+    font-weight: 500;
+    @include font-size(1.875rem);
+    color: $pure_white;
+
+    span {
+      white-space: pre-wrap;
+      color: $def_light_blue;
+      max-width: 65%;
+      font-style: normal;
+      font-weight: 400;
+      @include font-size(1.125rem);
+      margin: 5px 0px;
+      line-height: 1.3rem;
+    }
+
+    button {
+      position: absolute;
+
+      background-image: url("/closer.svg");
+      background-size: 90%;
+      background-position: center;
+      background-color: transparent;
+      background-repeat: no-repeat;
+
+      top: 18px;
+      right: 25px;
+
+      border: none;
+      cursor: pointer;
+
+      width: 17px;
+      height: 17px;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 539.98px) {
+  .modalBase {
+    width: 95%;
+    position: relative;
+    border-radius: 17px;
+  }
+
+  .contentWrapper {
+    padding: 10px 15px;
+  }
+}

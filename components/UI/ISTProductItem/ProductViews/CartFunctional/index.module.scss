@@ -1,0 +1,115 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins/rfs_mixins';
+@import '../../../scss/mixins/ratioBox/ratio-box';
+@import '../../../scss/mixins/textEllipsing';
+
+$border_radius: 20px;
+
+.CartItemContainer {
+  width: 100%;
+  min-width: min-content;
+
+  background: $def_page_bg;
+  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.21);
+  border-radius: $border_radius;
+  height: fit-content;
+  position: relative;
+
+  .productContainer {
+    height: fit-content;
+    display: flex;
+
+    .ItemImg {
+      width: 33%;
+      min-width: 150px;
+
+      @include ratio-box(1/1);
+      overflow: hidden;
+      border-radius: $border_radius 0px 0px $border_radius;
+      cursor: pointer;
+    }
+
+    .ItemDescription {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 15px 15px 5px 20px;
+      width: 65%;
+
+      .itemData {
+        .title {
+          font-style: normal;
+          font-weight: 500;
+          @include font-size(1.375rem);
+          line-height: 1.2;
+          color: $def_white;
+          height: fit-content;
+          margin: 0;
+
+          max-width: calc(100% - 50px);
+
+          word-wrap: break-word;
+          @include text-ellipsing(2);
+          overflow: hidden;
+        }
+
+        .vendCode {
+          font-style: normal;
+          font-weight: 500;
+          @include font-size(1rem);
+          line-height: 19px;
+
+          margin: 10px 0 20px 0;
+
+          color: $def_light_blue !important;
+        }
+      }
+    }
+
+    .CheckBoxBlock {
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      display: block;
+    }
+
+    .qAndPrice {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 50px;
+
+      .qEditor {
+        width: 170px;
+      }
+
+      .price {
+        .priceValue {
+          text-align: right;
+
+          width: 100%;
+          max-width: calc(100% - 30px);
+          min-width: 100px;
+
+          word-wrap: anywhere;
+          @include text-ellipsing(1);
+          overflow: hidden;
+        }
+
+        span {
+          width: 30px;
+          margin: 0 5px;
+        }
+
+        font-style: normal;
+        font-weight: 500;
+        @include font-size(1.375rem);
+        color: $def_white;
+        display: flex;
+
+        width: calc(100% - 170px);
+      }
+    }
+  }
+}

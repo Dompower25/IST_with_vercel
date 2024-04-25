@@ -1,0 +1,28 @@
+query getLandingPages($lang: String!) {
+  landing_page {
+    page_identifier
+    main_page
+    page_priority
+    landing_label(filter: { languages_id: { code: { _eq: $lang } } }) {
+      main_label
+      subtitle
+    }
+    gallery_page {
+      image
+      action_url
+      gallery_landig_translation(
+        filter: { languages_code: { code: { _eq: $lang } } }
+      ) {
+        description
+      }
+    }
+    gallery {
+      gallery_content(filter: { languages_code: { code: { _eq: $lang } } }) {
+        gallery_items
+      }
+    }
+    background {
+      back_images
+    }
+  }
+}

@@ -1,0 +1,6 @@
+query {
+  Type_category {
+    type_name
+    slug
+  }
+}

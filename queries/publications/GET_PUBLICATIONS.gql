@@ -1,0 +1,8 @@
+query getPublications {
+    publications {
+        id,
+        content,
+        date_created,
+        title
+    }
+}

@@ -1,0 +1,6 @@
+query getSessionItem($id: ID!) {
+  cartCollection_by_id(id: $id) {
+    id
+    cart_model
+  }
+}

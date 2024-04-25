@@ -1,0 +1,151 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins/rfs_mixins";
+@import "../../../styles/mixins/background_mixin";
+@import "../../../styles/mixins/ratioBox/ratio-box";
+
+.header {
+  width: 100%;
+  display: flex;
+
+  max-width: calc(1480px + 15px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  height: 80px;
+  padding: 3px 0 0 0;
+  background: $def_dark;
+  margin: 0px !important;
+
+  box-shadow: 0 5px 20px $def_dark;
+  justify-content: center;
+  align-items: center;
+
+  .logoBlock {
+    min-width: 150px;
+    max-width: 170px;
+  }
+
+  .logoContainer {
+    position: relative;
+    height: 100%;
+  }
+
+  .searchBlock {
+    padding: 0 0 0 50px;
+  }
+
+  .closeBlock {
+    position: absolute;
+
+    right: 15px;
+    top: 15px;
+
+    .closeContainer {
+      position: relative;
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+@media screen and (min-width: 1399.98px) {
+  .header_XXL_1400 {
+    justify-content: space-between !important;
+
+    .logoBlock {
+      min-width: 170px;
+      max-width: 200px;
+    }
+
+    .searchBlock {
+      display: block !important;
+    }
+
+    .closeBlock {
+      position: unset;
+
+      .closeContainer {
+        position: relative;
+        width: 17px;
+        height: 17px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1199.98px) {
+  .header_XL_1200 {
+    justify-content: space-between !important;
+
+    .logoBlock {
+      min-width: 170px;
+      max-width: 200px;
+    }
+
+    .searchBlock {
+      display: block !important;
+    }
+
+    .closeBlock {
+      position: unset;
+
+      .closeContainer {
+        position: relative;
+        width: 17px;
+        height: 17px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 991.98px) {
+  .header_LG_992 {
+    justify-content: space-between !important;
+
+    .logoBlock {
+      min-width: 170px;
+      max-width: 200px;
+    }
+
+    .searchBlock {
+      display: block !important;
+    }
+
+    .closeBlock {
+      position: unset;
+
+      .closeContainer {
+        position: relative;
+        width: 17px;
+        height: 17px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 767.98px) {
+  .header_MD_768 {
+    display: flex;
+    justify-content: space-between !important;
+
+    .logoBlock {
+      min-width: 170px;
+      max-width: 200px;
+      align-self: center;
+    }
+
+    .searchBlock {
+      display: block !important;
+    }
+
+    .closeBlock {
+      position: unset;
+
+      .closeContainer {
+        position: relative;
+        width: 17px;
+        height: 17px;
+      }
+    }
+  }
+}

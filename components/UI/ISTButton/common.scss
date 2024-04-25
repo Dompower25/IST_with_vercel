@@ -1,0 +1,27 @@
+$def_styling_shadow_light_color: #374451;
+$def_styling_shadow_dark_color: #212931d3;
+
+$def_blue_gray_for_shadow: #313c49;
+$def_gray_for_shadow: #273039;
+
+$def_gradient_color_one: #151a20;
+$def_gradient_color_second: #2c3641;
+
+$def_filling_color_for_shadow_one: #14191f8c;
+$def_filling_color_for_shadow_second: #161b218c;
+
+$def_styling_shadows:
+  -3px -3px 4px $def_styling_shadow_light_color,
+  3px 3px 4px $def_styling_shadow_dark_color;
+
+$def_styling_shadow_gradient:
+  3px 3px 4px 0px $def_styling_shadow_dark_color,
+  -3px -3px 4px 0px $def_styling_shadow_light_color;
+
+$def_styling_shadow_options_filling:
+  2px 2px 3px 0px $def_filling_color_for_shadow_one,
+  -2px -2px 3px 0px $def_filling_color_for_shadow_second;
+
+$def_styling_filling_shadow:
+  -4px -4px 4px 0px $def_blue_gray_for_shadow,
+  4px 4px 4px 0px $def_gray_for_shadow;

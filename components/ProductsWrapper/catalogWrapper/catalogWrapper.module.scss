@@ -1,0 +1,134 @@
+@import '../../../styles/variables';
+
+// VARIABLES
+$defNumOfCols: 5;
+$minItemWidth: 200px;
+
+// SIZES
+$sm: sm;
+$md: md;
+$lg: lg;
+$xl: xl;
+
+// ALIGN
+$center: center;
+$start: flex-start;
+$end: flex-end;
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  display: grid;
+
+  // justify-content: center;
+
+  grid-template-columns: repeat($defNumOfCols, minmax(0, $minItemWidth));
+  gap: 15px;
+
+  @for $i from 1 through $defNumOfCols {
+    &.wrapper-#{$i} {
+      grid-template-columns: repeat($i, minmax(0, $minItemWidth));
+    }
+  }
+
+  &.align-start {
+    justify-content: $start;
+  }
+  &.align-center {
+    justify-content: $center;
+  }
+  &.align-end {
+    justify-content: $end;
+  }
+
+  // Media query for sm
+  @media (min-width: 575.98px) {
+    @for $i from 1 through $defNumOfCols {
+      &.wrapper-#{$sm}-#{$i} {
+        grid-template-columns: repeat($i, minmax(0, $minItemWidth));
+      }
+    }
+
+    &.align-#{$sm}-center {
+      justify-content: $center;
+    }
+
+    &.align-#{$sm}-start {
+      justify-content: $start;
+    }
+
+    &.align-#{$sm}-end {
+      justify-content: $end;
+    }
+  }
+
+  // Media query for md
+  @media (min-width: 768px) {
+    @for $i from 1 through $defNumOfCols {
+      &.wrapper-#{$md}-#{$i} {
+        grid-template-columns: repeat($i, minmax(0, $minItemWidth));
+      }
+    }
+    &.align-#{$md}-center {
+      justify-content: $center;
+    }
+
+    &.align-#{$md}-start {
+      justify-content: $start;
+    }
+
+    &.align-#{$md}-end {
+      justify-content: $end;
+    }
+  }
+
+  // Media query for lg
+  @media (min-width: 991.98px) {
+    @for $i from 1 through $defNumOfCols {
+      &.wrapper-#{$lg}-#{$i} {
+        grid-template-columns: repeat($i, minmax(0, $minItemWidth));
+      }
+    }
+    &.align-#{$lg}-center {
+      justify-content: $center;
+    }
+
+    &.align-#{$lg}-start {
+      justify-content: $start;
+    }
+
+    &.align-#{$lg}-end {
+      justify-content: $end;
+    }
+  }
+
+  // Media query for xl
+  @media (min-width: 1199.98px) {
+    @for $i from 1 through $defNumOfCols {
+      &.wrapper-#{$xl}-#{$i} {
+        grid-template-columns: repeat($i, minmax(0, $minItemWidth));
+      }
+    }
+    &.align-#{$xl}-center {
+      justify-content: $center;
+    }
+
+    &.align-#{$xl}-start {
+      justify-content: $start;
+    }
+
+    &.align-#{$xl}-end {
+      justify-content: $end;
+    }
+  }
+
+  .emptyResContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    justify-self: center;
+  }
+}

@@ -1,0 +1,60 @@
+.def_desktop {
+  display: block;
+}
+
+.def_mobile {
+  display: none;
+}
+
+@media screen and (min-width: 1399.98px) {
+  .mobile_XXL_1400 {
+    display: none !important;
+  }
+  .desktop_XXL_1400 {
+    display: block !important;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1199.98px) {
+  .mobile_XL_1200 {
+    display: block !important;
+    width: 100%;
+  }
+  .desktop_XL_1200 {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  .mobile_LG_992 {
+    display: block !important;
+    width: 100%;
+  }
+
+  .desktop_LG_992 {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .mobile_MD_768 {
+    display: block !important;
+    width: 100%;
+  }
+
+  .desktop_MD_768 {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .mobile_SM_576 {
+    display: block !important;
+    width: 100%;
+  }
+
+  .desktop_SM_576 {
+    display: none !important;
+  }
+}

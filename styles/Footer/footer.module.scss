@@ -1,0 +1,116 @@
+@import "./styles/scss_mixins";
+@import "../variables";
+@import "../../components/UI/scss/mixins/scroll_mixin";
+
+.Footer {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactsBlock {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    color: $pure_white;
+    @include font-size(1.75rem);
+    font-weight: 500;
+  }
+
+  ul {
+    max-width: 100%;
+    width: 100%;
+
+    min-height: min-content;
+    height: 230px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    @include scroll($direction: rtl, $track_bg: $def_dark);
+
+    padding-left: 20px !important;
+    margin: 2.5px 0px;
+
+    p {
+      color: $pure_white !important;
+      text-decoration: none;
+      @include font-size(1.3rem);
+      margin-bottom: 1px;
+      margin-top: 10px;
+      padding: 0;
+      &:first-child {
+        margin-top: 0px;
+      }
+    }
+
+    li {
+      list-style: none;
+
+      &.currency {
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
+        cursor: pointer;
+        @include font-size(1.3rem);
+        padding: 0;
+        margin: 0;
+        span {
+          text-decoration: underline;
+          color: $def_light_blue;
+        }
+        .margined {
+          padding-left: 5px;
+
+          &.current {
+            padding-left: 25px;
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 50%;
+              width: 10px;
+              height: 10px;
+              background: $def_blue;
+              transform: translateY(-50%);
+              border-radius: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mapBlock {
+  width: 100%;
+  max-width: 400px;
+  min-height: 250px;
+  height: 100%;
+  max-height: 300px;
+  margin-top: 15px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.ourCompanyBlock {
+  width: max-content;
+  text-align: center;
+  margin: 20px 0px;
+  margin-top: 40px !important;
+
+  P {
+    @include font-size(1.5rem);
+    @include margin-bottom(0px);
+    font-weight: bold;
+    color: $pure_white !important;
+  }
+  a {
+    @include font-size(1.125);
+    color: $def_blue !important;
+  }
+}

@@ -1,0 +1,82 @@
+@import '../../../mixins/textEllipsing';
+@import '../../../variables';
+@import '../../../mixins/rfs_mixins';
+@import '../../../mixins/scroll_mixin';
+
+$totalSum_h: 100px;
+
+.mobileModalCartWrapper {
+  padding-bottom: $totalSum_h;
+}
+
+.cartWrapper {
+  width: 100%;
+  height: calc(100% - $totalSum_h);
+}
+
+.cartTotalSum_and_order {
+  width: 100%;
+  height: $totalSum_h;
+  position: absolute;
+
+  box-shadow: 0 0 6px $def_dark;
+
+  bottom: 0;
+  left: 0;
+
+  border-radius: 15px;
+
+  padding: 0 15px;
+  padding-top: 10px !important;
+  background: $def_page_bg;
+
+  z-index: 1;
+
+  & .totalSum {
+    width: 100%;
+    height: 30px;
+    display: flex;
+
+    color: $def_white;
+    @include font-size(1.1rem);
+
+    & .selected {
+      width: 50%;
+      height: 100%;
+
+      display: flex;
+
+      &:nth-child(odd) {
+        padding-right: 15px;
+      }
+
+      &:nth-child(even) {
+        padding-left: 15px;
+      }
+
+      & .selected_txt {
+        width: 100%;
+        height: 100%;
+
+        word-wrap: break-word;
+        overflow: hidden;
+        @include text-ellipsing(1);
+
+        position: relative;
+      }
+
+      & .selected_num {
+        white-space: nowrap;
+        position: relative;
+      }
+    }
+  }
+
+  .btnPlace {
+    position: relative;
+    height: 48px;
+    width: inherit;
+
+    margin-top: 5px;
+  }
+}

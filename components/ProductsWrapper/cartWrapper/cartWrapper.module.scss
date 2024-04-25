@@ -1,0 +1,40 @@
+@import '../../../styles/mixins/rfs_mixins.scss';
+@import '../../../styles/variables.scss';
+
+.cartWrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.emptyCart {
+  max-width: 100%;
+  width: 400px;
+  height: 100%;
+  color: $def_white;
+
+  .emptyCart_title {
+    @include font-size(1.65rem);
+
+    font-style: normal;
+    font-weight: 500;
+    line-height: 113.688%;
+    letter-spacing: 0.96px;
+  }
+
+  .emptyCart_hint {
+    margin: 12.5px 0px 20px 0px;
+
+    @include font-size(1.25rem);
+    color: $def_white;
+
+    font-style: normal;
+    font-weight: 400;
+    line-height: 113.688%; /* 36.38px */
+    letter-spacing: 0.96px;
+  }
+
+  .emptyCart_cartOpener {
+    height: 40px;
+    width: 150px;
+  }
+}

@@ -1,0 +1,5 @@
+mutation sendCallBackRequest($data: create_CB_Requests_input!) {
+  create_CB_Requests_item(data: $data) {
+    id
+  }
+}

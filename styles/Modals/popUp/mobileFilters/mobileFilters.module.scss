@@ -1,0 +1,32 @@
+@import "../../../../components/UI/scss/mixins/scroll_mixin.scss";
+
+.filtersContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  max-width: 100%;
+  width: 300px;
+
+  height: fit-content;
+  margin-bottom: 15px;
+}
+
+.filtersWrapper {
+  @include scroll($size: 2px, $direction: rtl);
+  overflow: auto;
+
+  padding-left: 10px;
+  padding-right: 1px;
+  padding-top: 1px;
+
+  height: 45vh;
+  max-height: 100%;
+  margin-bottom: 15px;
+
+  & > * {
+    &:first-child {
+      margin-top: 0px !important;
+    }
+  }
+}

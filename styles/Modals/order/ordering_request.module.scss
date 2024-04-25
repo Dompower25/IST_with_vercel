@@ -1,0 +1,49 @@
+@import '../../../styles/mixins/scroll_mixin.scss';
+@import '../../../styles/mixins/background_mixin.scss';
+@import '../../../styles/scss_mixins.scss';
+@import '../../../styles/variables.scss';
+
+.orderRequestBox {
+  max-width: 550px;
+
+  padding: 0 10px;
+
+  @media (min-width: 539.98px) {
+    padding: 0px 32px;
+  }
+
+  max-height: 50vh;
+  overflow: auto;
+  @include scroll($size: 2px, $direction: rtl);
+
+  margin-top: 24px;
+
+  @include font-size(1.125rem);
+  color: $def_white;
+  font-weight: 700;
+  .input {
+    margin-top: 15px;
+  }
+
+  .description {
+    color: $def_pastel_yellow;
+    > div {
+      margin: 14px 0;
+      font-weight: 700;
+    }
+  }
+
+  .footerButtonBox {
+    position: sticky;
+    bottom: 0px;
+    background: $def_page_bg;
+
+    display: flex;
+    margin-top: 30px;
+    > div {
+      padding-top: 10px;
+      width: 100%;
+      margin: 0 5px;
+    }
+  }
+}

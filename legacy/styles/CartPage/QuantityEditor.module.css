@@ -1,0 +1,89 @@
+/* QuantityEditor */
+.QuantityEditor {
+  width: 140px;
+  height: 44px;
+  border-radius: 22px;
+  position: relative;
+  background: #2c3641;
+}
+
+.QuantityEditor::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  padding-top: 3px !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+    96.53deg,
+    #76ace7 0.01%,
+    rgba(255, 255, 255, 0.56) 61.55%,
+    rgba(255, 244, 217, 0.57) 127.85%
+  );
+  border-radius: 24px;
+  z-index: -1;
+}
+
+.ActionsContainer {
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ActionsContainer button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #dee6f0;
+   
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  padding: 18px;
+  display: block;
+  width: 100%;
+  border-radius: 100%;
+  position: relative;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.ActionsContainer button:hover {
+  color: #76ace7;
+  transition: 0.3s;
+}
+
+.ActionsContainer input {
+  color: #dee6f0;
+   
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  max-width: 30px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+@media (max-width: 576.98px) {
+  .QuantityEditor {
+    max-width: 106px;
+    height: 34px;
+  }
+  .ActionsContainer input {
+    font-size: 20px;
+    max-width: 20px;
+  }
+  .ActionsContainer button {
+    max-width: 45px;
+    width: 45px;
+  }
+}

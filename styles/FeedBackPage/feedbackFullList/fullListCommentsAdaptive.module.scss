@@ -1,0 +1,76 @@
+@import '../../variables';
+@import '../../mixins/rfs_mixins';
+
+$reaction_size: 60px;
+
+@media screen and (min-width: 0px) {
+  .comment_container {
+    height: 100%;
+    max-height: unset;
+
+    .comment_header {
+      & .rate_container {
+        & .comment_rate {
+          filter: drop-shadow(0px 0px 4px rgba(255, 223, 147, 0.8));
+        }
+      }
+
+      & .name {
+        white-space: normal;
+        overflow: unset;
+        max-width: 80%;
+
+        height: fit-content;
+        max-height: unset;
+
+        line-height: 25px;
+        @include font-size(1.35rem);
+      }
+
+      & .category {
+        white-space: normal;
+        overflow: unset;
+        max-width: 80%;
+
+        height: fit-content;
+        max-height: unset;
+
+        margin: 5px 0px;
+        font-weight: 400;
+        line-height: 22px;
+        @include font-size(1.15rem);
+
+        color: $def_blue_gray !important;
+      }
+
+      flex-direction: column;
+      height: fit-content;
+      max-height: unset;
+    }
+
+    .comment {
+      white-space: normal;
+      overflow: unset;
+      height: fit-content;
+      max-height: unset;
+
+      display: block;
+      -webkit-line-clamp: unset;
+      -webkit-box-orient: unset;
+      overflow: unset;
+      text-overflow: unset;
+
+      word-wrap: break-word;
+
+      margin-top: 5px;
+
+      line-height: 28px;
+      font-weight: 500;
+      @include font-size(1.25rem);
+    }
+
+    .rFull_link {
+      display: none;
+    }
+  }
+}

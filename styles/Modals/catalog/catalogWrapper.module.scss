@@ -1,0 +1,93 @@
+@import "../../variables";
+@import "../../mixins/scroll_mixin";
+
+$headerSize: 110px;
+$mobile_bar: 90px;
+
+.catalog_wrapper {
+  min-width: 100vw;
+  height: 100%;
+  background: $def_dark;
+  @include scroll($size: 3px);
+  overflow: auto;
+}
+
+.catalogContent_wrapper {
+  position: relative;
+
+  &.modal {
+    height: calc(100vh - (100vh - 100%) - $headerSize - $mobile_bar);
+  }
+}
+
+.catalogContent {
+  height: calc(100% - $headerSize);
+  margin: 0 auto;
+
+  padding-top: calc($headerSize - 10px) !important;
+  padding: 0 5px;
+
+  width: 100%;
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.mobileCatalogBar {
+  height: $mobile_bar;
+  width: calc(100% - 30px);
+
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  &:after {
+    content: "";
+
+    position: absolute;
+    bottom: -15px;
+    z-index: -1;
+    height: $mobile_bar / 2;
+    background: $def_dark;
+    width: 100%;
+  }
+
+  &.searching {
+    bottom: -7.5px;
+
+    &:after {
+      bottom: 5px;
+      z-index: -1;
+    }
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  .catalogContent {
+    padding-bottom: calc($mobile_bar + 30px) !important;
+  }
+}
+
+@media screen and (min-width: 575.98px) {
+  .catalogContent {
+    padding: 0px 15px;
+  }
+}
+
+@media screen and (min-width: 991.98px) {
+  .catalogContent {
+    padding: 0px 25px;
+  }
+
+  .catalogContent_wrapper {
+    height: fit-content;
+    overflow: unset;
+  }
+
+  .mobileCatalogBar {
+    display: none;
+  }
+}

@@ -1,0 +1,229 @@
+@import '../../variables';
+@import '../../mixins/rfs_mixins';
+@import '../../mixins/scroll_mixin';
+@import '../../mixins/ratioBox/ratio-box';
+
+$transition_speed: 0.3s;
+
+.fb_modal_bg {
+  position: absolute;
+  width: 100%;
+  height: 75%;
+
+  background: linear-gradient(
+    180deg,
+    rgba(21, 26, 32, 0) 0%,
+    rgba(21, 26, 32, 0.5) 10%,
+    #151a20 100%
+  );
+  bottom: 0;
+}
+
+.feedback_data_wrapper {
+  width: 90%;
+  height: 60%;
+
+  border-radius: 30px 30px 0px 0px;
+  //background: #000;
+  background: $def_page_bg;
+  box-shadow: 0px 0px 10px $def_dark;
+
+  z-index: 1;
+  padding: 20px;
+
+  position: relative;
+  transition: $transition_speed;
+
+  @media screen and (max-width: 767.98px) {
+    min-width: calc(100% + 20px);
+    height: 40%;
+    padding: 10px;
+  }
+
+  .feedback_closer {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+
+    border-radius: 100%;
+    background: $def_dark;
+
+    right: 11px;
+    top: -5px;
+
+    cursor: pointer;
+    transition: $transition_speed;
+
+    & > * {
+      opacity: 0.7;
+    }
+
+    &:hover {
+      transition: $transition_speed;
+      box-shadow: -1px -1px 5px $def_dark;
+    }
+  }
+}
+
+.feedback_data_header {
+  width: 100%;
+  height: 80px;
+
+  .feedback_title {
+    color: $def_white;
+    @include font-size(1.25rem);
+    font-weight: 500;
+    padding: 12px 22px;
+
+    background: $def_dark;
+    border-radius: 15px;
+    width: fit-content;
+
+    @media screen and (max-width: 767.98px) {
+      @include font-size(1.2rem);
+      font-weight: 500;
+      padding: 10px 20px;
+    }
+  }
+}
+
+.deployed_wrapper {
+  height: 90%;
+  transition: $transition_speed;
+
+  @media screen and (max-width: 767.98px) {
+    height: 85%;
+  }
+
+  .feedback_data {
+    border-radius: 15px;
+
+    .feedback_data_header {
+      height: fit-content;
+      padding-bottom: 15px;
+    }
+
+    .feedback_comments {
+      overflow-y: auto;
+      @include scroll($size: 1px);
+      border-radius: 0px;
+      padding: 0px 3px;
+
+      &.loading_state {
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 40%;
+          height: 10px;
+          background: radial-gradient(
+            53.33% 53.33% at 50% 0,
+            $def_light_blue 0,
+            rgba(0, 0, 0, 0) 100%
+          );
+
+          animation: 0.8s indeterminate_first infinite ease-out;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 60%;
+          height: 10px;
+          background: radial-gradient(
+            53.33% 53.33% at 50% 0,
+            $def_blue 0,
+            rgba(0, 0, 0, 0) 100%
+          );
+
+          animation: 0.8s indeterminate_second infinite ease-out;
+        }
+
+        @keyframes indeterminate_first {
+          0% {
+            left: -100%;
+            width: 100%;
+          }
+          100% {
+            left: 100%;
+            width: 10%;
+          }
+        }
+
+        @keyframes indeterminate_second {
+          0% {
+            left: -110%;
+            width: 100%;
+          }
+          100% {
+            left: 100%;
+            width: 10%;
+          }
+        }
+      }
+    }
+  }
+
+  .feedback_more_comments {
+    display: none;
+  }
+}
+
+.feedback_data {
+  width: 100%;
+  height: 100%;
+  border-radius: 0px 0px 30px 30px;
+  position: relative;
+  overflow: hidden;
+
+  .feedback_comments {
+    height: calc(100% - 80px);
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+
+    .fb_comments_wrapper {
+      columns: 3;
+      width: 100%;
+      padding: 10px;
+      padding-left: 0px !important;
+      @media screen and (max-width: 991.98px) {
+        columns: 2;
+      }
+
+      @media screen and (max-width: 767.98px) {
+        columns: 1;
+      }
+    }
+
+    .fb_comment_container {
+      height: fit-content;
+      display: inline-block;
+      margin: 10px 0px;
+      width: 100%;
+    }
+  }
+}
+
+.feedback_more_comments {
+  width: 100%;
+  height: 50px;
+
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, $def_page_bg 30.78%);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  .feedback_more_comments_img {
+    cursor: pointer;
+  }
+}

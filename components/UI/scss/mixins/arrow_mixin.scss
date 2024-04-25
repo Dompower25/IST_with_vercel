@@ -1,0 +1,40 @@
+@import '../variables';
+
+@mixin arrow($size: 3px, $rotate: 0deg) {
+  & {
+    position: relative !important;
+    transform: rotate($rotate);
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    height: calc(100% - $size * 2);
+    width: $size;
+    left: calc(50% - 1px);
+    bottom: 0;
+    background: $def_blue_gray;
+    border-radius: 3px;
+
+    transform-origin: bottom;
+
+    transform: translateX(-50%) rotate(45deg);
+    transition: all 0.1s ease-in-out;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    height: calc(100% - $size * 2);
+    width: $size;
+    left: calc(50% + 1px);
+    bottom: 0;
+    background: $def_blue_gray;
+    border-radius: 3px;
+
+    transform-origin: bottom;
+
+    transform: translateX(-50%) rotate(-45deg);
+    transition: all 0.1s ease-in-out;
+  }
+}

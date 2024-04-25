@@ -1,0 +1,35 @@
+@import "../../UI/scss/mixins/rfs_mixins.scss";
+@import "../../UI/scss/variables.scss";
+@import "../../UI/scss/mixins/textEllipsing.scss";
+
+.headingPublicationsWrapper {
+  display: flex;
+  flex-direction: column;
+  @include font-size(1.2rem);
+  border-left: solid 2px $def_blue_gray;
+  padding-left: 20px;
+  line-height: 123%;
+
+  .headingTitle {
+    @include text-ellipsing($ellipsing_line: 2);
+    @include font-size(1.25rem);
+    overflow: hidden;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  & > * {
+    margin-bottom: 5px;
+  }
+
+  .title {
+    margin-left: 15px;
+    overflow: hidden;
+    @include text-ellipsing($ellipsing_line: 1);
+  }
+  .subtitle {
+    margin-left: 25px;
+    overflow: hidden;
+    @include text-ellipsing($ellipsing_line: 1);
+  }
+}

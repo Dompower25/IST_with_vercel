@@ -1,0 +1,14 @@
+query getCollectionCategories($search: String) {
+  manufacturer_category(search: $search) {
+    manufacturer_name
+    slug
+  }
+  Type_category(search: $search) {
+    type_name
+    slug
+  }
+  Unit_category(search: $search) {
+    unit_name
+    slug
+  }
+}

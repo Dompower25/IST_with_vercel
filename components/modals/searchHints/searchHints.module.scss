@@ -1,0 +1,117 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins/rfs_mixins.scss";
+
+$hintsContainerShadow: 0px 0px 10px 0px $def_dark;
+$catalogHintsShadowsOffset: 15px;
+
+.searchHintsModal {
+  width: 100%;
+  z-index: -1;
+
+  .hideTooltips {
+    color: $def_white;
+    opacity: 0.4;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    max-width: 500px;
+
+    height: fit-content;
+    position: absolute;
+    bottom: 15px;
+    @include font-size(1.2rem);
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: $def_white;
+      opacity: 0.8;
+      transition: 0.3s;
+    }
+  }
+}
+
+.hintsContainer {
+  height: 600px;
+  max-height: 75vh;
+  width: 100%;
+
+  padding: 30px;
+  padding-bottom: 20px !important;
+  margin-top: 80px !important;
+  border-radius: 25px;
+
+  background-color: $def_dark;
+  box-shadow: $hintsContainerShadow;
+
+  color: #fff;
+  display: flex;
+
+  .productsList {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .list {
+      width: inherit;
+      height: 100%;
+
+      overflow: hidden;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+
+        bottom: 0;
+        left: calc($catalogHintsShadowsOffset * (-1));
+
+        height: 110px;
+        width: calc(100% + 2 * $catalogHintsShadowsOffset);
+
+        background-image: url("./gradientBG.png");
+        background-repeat: repeat-x;
+      }
+    }
+
+    .showMoreContainer {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+  }
+
+  .hintsList {
+    width: 100%;
+    height: 100%;
+
+    &.unvis {
+      width: 0%;
+      visibility: hidden;
+    }
+  }
+
+  .hintsBG {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $def_dark;
+    opacity: 0.65;
+    z-index: -1;
+    cursor: pointer;
+  }
+}
+
+// KOLHOZZ
+@media screen and (max-width: 1200px) {
+  .hintsList {
+    display: none;
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,9 @@
+mutation updateCartCollectionItem(
+  $data: update_cartCollection_input!
+  $id: ID!
+) {
+  update_cartCollection_item(data: $data, id: $id) {
+    id
+    cart_model
+  }
+}

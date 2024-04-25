@@ -1,0 +1,46 @@
+@import '../scss/variables';
+@import '../scss/mixins/rfs_mixins';
+
+.inputForm {
+  width: 100%;
+  height: max-content;
+
+  input[type='text'] {
+    width: 100%;
+    background: $def_white;
+    border: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: $def_dark_gray;
+    padding-left: 22px;
+    transition: 0.3s;
+  }
+}
+
+.inputForm.afterBlock_ISTInput:has(._input_required) {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: '';
+    color: transparent;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: auto;
+    right: 15px;
+
+    background-color: $def_page_bg;
+    //box-shadow: 0px 0px 5px $def_dark;
+    border-radius: 10px;
+
+    background-image: url('/InputFormShouldBeFill.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 45%;
+    background-size: 55%;
+    z-index: 1;
+  }
+}

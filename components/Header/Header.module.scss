@@ -1,0 +1,252 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins/scroll_mixin.scss";
+@import "../../styles/scss_mixins.scss";
+@import "../../styles/ist_gradient_mixin.scss";
+
+.headerCont {
+  width: 100%;
+  height: 70px !important;
+
+  background: $def_dark;
+  height: fit-content;
+  position: relative;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.headerLogo {
+  height: 85%;
+  min-width: 170px;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+
+  @media screen and (min-width: 991.98px) {
+    height: 95%;
+  }
+
+  @media screen and (min-width: 1400.98px) {
+    height: 85%;
+  }
+}
+
+.mobLogo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  margin-left: -15px;
+  border-radius: 0px 0px 20px 0px;
+  box-shadow: 0px 0px 10px $def_dark;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: $idb_s_d;
+
+  .headerLogo {
+    min-width: 100% !important;
+    height: 85% !important;
+    width: 80% !important;
+    position: relative;
+  }
+
+  @media screen and (max-width: 575.98px) {
+    width: 100%;
+    .headerLogo {
+      width: 90%;
+      height: 90%;
+    }
+  }
+}
+
+.headerCatalog {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  .catalogBtn {
+    cursor: pointer;
+    @include gradient_bg($non_gradient_color: $def_page_bg, $border_s: 0px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+
+    padding: 0px 15px;
+    margin-right: 15px;
+    height: 100%;
+
+    color: $def_white;
+    font-weight: 500;
+    @include font-size(1.2rem);
+
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+
+    .catalogBtn_img {
+      position: relative;
+      width: 20px;
+      height: 100%;
+      margin: 0px 10px;
+      margin-left: 0px !important;
+    }
+  }
+
+  .searchForm {
+    display: flex;
+    width: calc(100% - 20px);
+    height: 100%;
+  }
+
+  @media screen and (max-width: 991.98px) {
+    .catalogBtn {
+      padding: 0px 8px;
+      margin-right: 10px;
+    }
+  }
+
+  @media screen and (max-width: 629.98px) {
+    padding: 0px;
+    padding-left: 10px !important;
+
+    .catalogBtn {
+      span {
+        display: none;
+        position: absolute;
+      }
+      .catalogBtn_img {
+        margin: 0px;
+      }
+    }
+  }
+}
+
+.headerNav {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: flex-end;
+
+  & button {
+    margin: 0px 5px;
+    @include gradient_bg($non_gradient_color: $def_page_bg, $border_s: 0px);
+    height: 100%;
+    max-width: 100%;
+
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .contactsBtn {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+
+    padding: 0px 10px;
+    margin-right: 15px;
+
+    color: $def_white;
+    font-weight: 500;
+
+    .contactsBtn_img {
+      position: relative;
+      height: 100%;
+      width: 30px;
+      margin: 0px 10px;
+      margin-left: 0px !important;
+    }
+  }
+
+  .cartBtn {
+    width: 50px;
+    max-width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+
+    cursor: pointer;
+
+    .cartBtn_img {
+      position: relative;
+      width: 25px;
+      height: 100%;
+    }
+  }
+
+  @media screen and (max-width: 991.98px) {
+    justify-content: center;
+
+    & button {
+      max-width: 50px !important;
+    }
+
+    .contactsBtn {
+      & span {
+        display: none;
+        position: absolute;
+      }
+
+      width: 100%;
+
+      .contactsBtn_img {
+        width: 100%;
+        min-width: 25px;
+
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .cartBtn {
+      width: 100%;
+
+      .cartBtn_img {
+        width: 100%;
+        min-width: 25px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 629.98px) {
+    background: $def_page_bg;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+
+    & button {
+      padding: 0px !important;
+      margin: 0px !important;
+
+      width: 100%;
+      max-width: 100%;
+      box-shadow: none !important;
+    }
+
+    .contactsBtn {
+      width: 100%;
+      height: 100%;
+
+      .contactsBtn_img {
+        min-width: 25px;
+        width: 55%;
+      }
+    }
+
+    .cartBtn {
+      width: 100%;
+      height: 100%;
+
+      .cartBtn_img {
+        min-width: 25px;
+        width: 55%;
+      }
+    }
+  }
+}

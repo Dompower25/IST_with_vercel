@@ -1,0 +1,22 @@
+@import "../../UI/scss/variables.scss";
+@import "../../UI/scss/mixins/rfs_mixins.scss";
+
+.navItem {
+  @include font-size(1.1rem);
+  cursor: pointer;
+  display: block;
+
+  &:not(:first-child) {
+    margin-left: 15px;
+  }
+
+  &.active {
+    color: $def_pastel_yellow !important;
+    transition: 0.3s;
+  }
+
+  &:hover {
+    color: $def_light_blue !important;
+    transition: 0.3s;
+  }
+}

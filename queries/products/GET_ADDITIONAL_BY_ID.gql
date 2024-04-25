@@ -1,0 +1,24 @@
+query getProductById($id: GraphQLStringOrFloat) {
+  Products(filter: { id: { _eq: $id } }) {
+    product_manufacturer {
+      manufacturer_category_id {
+        manufacturer_name
+        manufacturer_name_ru
+      }
+    }
+
+    product_type {
+      Type_category_id {
+        type_name
+        type_name_ru
+      }
+    }
+
+    product_unit {
+      Unit_category_id {
+        unit_name
+        unit_name_ru
+      }
+    }
+  }
+}

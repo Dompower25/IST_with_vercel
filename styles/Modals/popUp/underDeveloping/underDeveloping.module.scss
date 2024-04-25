@@ -1,0 +1,30 @@
+@import '../../../variables.scss';
+@import '../../../mixins/rfs_mixins.scss';
+
+.modalBox {
+  max-width: 484px;
+  width: 100%;
+  padding: 0 32px;
+
+  @media screen and (max-width: 539px) {
+    padding: 0 15px;
+  }
+
+  .mainText {
+    color: $def_white;
+    @include font-size(1rem);
+    font-weight: 500;
+    max-width: 400px;
+    margin: 15px 0;
+    > span {
+      text-decoration: underline;
+      color: $def_light_blue;
+      cursor: pointer;
+    }
+  }
+
+  .button {
+    margin: 10px 0 0 0;
+    max-width: 250px;
+  }
+}

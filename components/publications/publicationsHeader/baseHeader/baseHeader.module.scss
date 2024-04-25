@@ -1,0 +1,174 @@
+@import "../../../UI/scss/variables.scss";
+@import "../../../UI/scss/mixins/rfs_mixins.scss";
+@import "../../../UI/scss/mixins/scroll_mixin.scss";
+
+$headerSize: 70px;
+
+.pubHeader {
+  width: 100%;
+  height: $headerSize;
+
+  background: $def_dark;
+  height: fit-content;
+  position: relative;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  color: $pure_white;
+  font-weight: 500;
+
+  button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  .headerContainer {
+    display: flex;
+    width: 100%;
+  }
+
+  .logo {
+    width: 100%;
+    max-width: calc((100% / 12) * 2);
+    min-width: $headerSize;
+    height: 100%;
+    cursor: pointer;
+    // border: solid 1px blue;
+
+    .mobileLogo {
+      // border: solid 1px blue;
+      display: none;
+      border-radius: 0 0 15px 0;
+      background: $def_page_bg;
+      position: relative;
+      width: $headerSize;
+      height: 100%;
+    }
+
+    .defaultLogo {
+      // border: solid 1px blue;
+      display: block;
+      background: transparent;
+      // border: solid 1px blue;
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .headerContent {
+    width: 100%;
+    padding: 0 20px;
+    height: inherit;
+  }
+
+  .mobileMenuButtonWrapper {
+    display: none;
+    width: 0px;
+
+    height: 100%;
+    // border: solid 1px yellow;
+
+    .menuButton {
+      position: relative;
+      display: block;
+      margin-left: 100%;
+      transform: translateX(-100%);
+      width: 50px;
+      height: 100%;
+      // border: solid 1px green;
+    }
+  }
+
+  .mobileMenuWrapper {
+    width: 100%;
+    height: fit-content;
+    padding: 5px 15px;
+    display: none;
+
+    position: absolute;
+    top: 100%;
+
+    &.active {
+      display: block;
+    }
+
+    .mobileMenuContainer {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      background: $def_dark;
+      border-radius: 15px;
+
+      padding: 10px 0px 10px 5px;
+      &::after {
+        content: "";
+        top: 0;
+        right: 0;
+        height: 100%;
+        position: absolute;
+        width: 10px;
+        // border: solid 1px red;
+        box-shadow: -3px 0px 8px $def_dark inset;
+      }
+
+      .headerNavRow {
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        overflow: scroll;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        @include scroll($size: 0px);
+
+        & > * {
+          &:not(:last-child) {
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  // MOBILE TRIGGER SIZE HANDLING
+  // "SM_576" | "XXL_1400" | "XL_1200" | "LG_992" | "MD_768"
+
+  $breakpoints: (
+    SM_576: 575.98px,
+    MD_768: 767.98px,
+    LG_992: 991.98px,
+    XL_1200: 1199.98px,
+    XXL_1400: 1399.98px
+  );
+
+  @each $name, $width in $breakpoints {
+    @media screen and (max-width: $width) {
+      .headerContent_#{$name} {
+        width: calc((100% / 12) * 8);
+      }
+
+      .menuButtonWrapper_#{$name} {
+        display: block;
+        width: calc((100% / 12) * 2);
+      }
+
+      .mobileLogo_#{$name} {
+        display: block !important;
+      }
+
+      .defaultLogo_#{$name} {
+        display: none !important;
+      }
+    }
+  }
+}

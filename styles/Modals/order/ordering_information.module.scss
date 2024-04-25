@@ -1,0 +1,22 @@
+@import '../../../styles/mixins/scroll_mixin.scss';
+@import '../../../styles/mixins/background_mixin.scss';
+@import '../../../styles/scss_mixins.scss';
+@import '../../../styles/variables.scss';
+
+.order {
+  max-width: 550px;
+
+  .cartProducts {
+    max-height: 50vh;
+    padding: 0 10px;
+
+    @media (min-width: 539.98px) {
+      padding: 0px 32px;
+    }
+
+    @include scroll($size: 2px, $direction: rtl);
+
+    overflow: auto;
+    box-sizing: border-box;
+  }
+}

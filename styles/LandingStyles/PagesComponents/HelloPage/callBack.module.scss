@@ -1,0 +1,102 @@
+@import '../../../variables';
+@import './styles/scss_mixins';
+
+.callBack {
+  width: 70%;
+  max-width: 400px;
+
+  min-height: 65vh;
+  height: max-content;
+
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+  //border: solid 1px red;
+
+  p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: $def_blue_gray;
+    margin-top: 13px;
+    margin-left: 8px;
+  }
+
+  span {
+    color: $def_light_blue;
+    margin-left: 5px;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  @media screen and (max-width: 991.98px) {
+    max-width: 400px;
+    width: 100%;
+    min-height: max-content;
+
+    input[type='text'] {
+      height: 50px !important;
+      border-radius: 20px !important;
+      font-size: 1rem !important;
+    }
+
+    button {
+      height: 50px !important;
+      border-radius: 20px !important;
+      font-size: 1rem !important;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+.baseBlock {
+  width: 100%;
+  max-width: 100%;
+  padding-right: 37px;
+  height: max-content;
+  background: $def_page_bg;
+  box-shadow: 14px 14px 22px -13px rgba(0, 0, 0, 0.21);
+  border-radius: 46px 46px 46px 0px;
+  padding-bottom: 20px;
+
+  .callBackTitle {
+    font-style: normal;
+    font-weight: 500;
+    @include font-size(2rem);
+    line-height: 37px;
+    color: $pure_white;
+    position: relative;
+    top: -6px;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 991.98px) {
+    border-radius: 46px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.21);
+    padding: 15px;
+    .callBackTitle {
+      @include font-size(1.5rem);
+      margin: 10px;
+      margin-bottom: 1px !important;
+    }
+  }
+}
+.inputBlock {
+  display: flex;
+  flex-direction: column;
+  margin-left: 7px;
+  margin-top: 7px;
+
+  @media screen and (max-width: 991.98px) {
+    margin-top: 0px;
+  }
+}

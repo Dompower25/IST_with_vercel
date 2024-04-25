@@ -1,0 +1,35 @@
+.contacts {
+  margin-bottom: 15px;
+}
+
+.contactsData {
+   
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.91);
+  width: 400px;
+  max-width: 100%;
+  font-weight: 500;
+  height: fit-content;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts span {
+  margin-left: 10px;
+}
+
+.contacts span a {
+  color: #93c3f8;
+  width: 100%;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.outLink {
+   
+  font-size: 15px;
+  font-weight: 500;
+  color: #93c3f8;
+  width: 400px;
+}

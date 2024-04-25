@@ -1,0 +1,67 @@
+@import '../../../styles/mixins/background_mixin.scss';
+@import '../../../styles/scss_mixins.scss';
+@import '../../../styles/variables.scss';
+
+.orderDialog {
+  @include font-size(1.25rem);
+  color: $def_white;
+  font-weight: 700;
+
+  position: sticky;
+  bottom: 0px;
+
+  width: 100%;
+
+  padding: 0 10px;
+
+  @media (min-width: 539.98px) {
+    padding: 0px 32px;
+  }
+
+  .cost {
+    padding: 15px 0;
+    .select {
+      display: flex;
+      flex-direction: row;
+      > div {
+        padding: 0 2px;
+      }
+    }
+    .totalSum {
+      display: flex;
+      flex-direction: row;
+      > div {
+        padding: 0 2px;
+      }
+    }
+  }
+
+  .buttonsDialog {
+    width: 100%;
+
+    .buttonInformationDialog {
+      max-width: 350px;
+    }
+
+    .buttonsRequestDialog {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+
+      .leftButton {
+        width: 100%;
+        text-align: center;
+      }
+
+      > .rightButton {
+        width: 75%;
+        text-align: center;
+        color: $def_light_blue;
+        font-weight: 500;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}

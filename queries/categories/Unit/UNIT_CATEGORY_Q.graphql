@@ -1,0 +1,6 @@
+query {
+  Unit_category {
+    unit_name
+    slug
+  }
+}

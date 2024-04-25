@@ -1,0 +1,281 @@
+/* [AvailabilityStatus]: */
+
+/* Check by phone */
+.AvailabilityStatus {
+  width: fit-content;
+  min-width: 50px;
+  height: 48px;
+  padding: 9px 20px;
+  display: flex;
+  align-items: center;
+  border: 2px solid #c4d4e5;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 12px #587ba0;
+  border-radius: 53px;
+}
+.AvailabilityStatus p {
+   
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: calc(15px + (18 - 15) * ((100vw - 300px) / (1920 - 320)));
+  color: #c4d4e5;
+  height: 10px;
+}
+
+/* Available */
+
+.AvailabilityStatus.Available {
+  border-color: #93f8b5 !important;
+}
+.AvailabilityStatus.Available p {
+  color: #93f8b5 !important;
+}
+
+/* Not Available */
+
+.AvailabilityStatus.notAvailable {
+  border-color: #ffdf93 !important;
+  box-shadow: 0px 0px 12px #ffdf93;
+}
+.AvailabilityStatus.notAvailable p {
+  color: #ffdf93 !important;
+}
+
+/* ------------------------ */
+
+/* [DescriptionEntry]: */
+
+.DescEntryItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.DescEntryItem p {
+   
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1920 - 320)));
+  color: #e6e6e4;
+  background: #2c3641;
+  z-index: 1;
+  margin-top: 13px;
+}
+.DescEntryTitle {
+  padding-right: 13px;
+}
+.DescEntryParams {
+  padding-left: 13px;
+  max-width: 35%;
+  text-align: right;
+}
+.DescEntryItem::after {
+  width: calc(100%);
+  z-index: 0;
+  height: min-content;
+  content: '';
+  top: 30px;
+  position: absolute;
+  border-bottom: dotted 3px #414f5f;
+}
+/* ---------------------- */
+
+/* [ReplacementItem]: */
+.ReplacementItem {
+  display: flex;
+  max-width: 154px;
+  width: 154px;
+  height: 129px;
+  background: #2c3641;
+  box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.2);
+  border-radius: 23px;
+
+  /* background-image: url("/ARU_back.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.3s;
+  align-items: center;
+  justify-content: center;
+}
+
+.ReplacementItem:hover {
+  transition: 0.3s;
+  box-shadow: 0px 0px 7px #6b94bf;
+}
+
+.ReplacementItem p {
+  width: 80%;
+  text-align: center;
+  padding: 0px;
+  max-width: 100%;
+  word-wrap: break-word;
+  font-size: calc(
+    18px + (20 - 18) * ((100vw - 300px) / (1920 - 320))
+  ) !important;
+  color: #e6e6e4 !important;
+}
+
+/* ------------------ */
+
+/* [AdditionalItem]: */
+.AdditionalItem {
+  width: 190px;
+  min-width: 190px;
+  height: 156px;
+  position: relative;
+  border-radius: 24px;
+  background-color: #2c3641;
+  margin: 6px;
+  cursor: pointer;
+}
+.AdditionalItem::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 26px;
+  background: rgb(118, 172, 231);
+  background: linear-gradient(
+    162deg,
+    rgba(118, 172, 231, 1) 0%,
+    rgba(204, 222, 240, 1) 50%,
+    rgba(255, 251, 240, 1) 100%
+  );
+  z-index: -1;
+  transition: 0.3s;
+}
+
+.AdditionalContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 25px;
+}
+.AdditionalContainer::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    360deg,
+    #151a20 0%,
+    rgba(15, 19, 23, 0.728041) 52.6%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 0;
+}
+.AdditionalTitle {
+   
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc(
+    14px + (18 - 14) * ((100vw - 300px) / (1920 - 320))
+  ) !important;
+  padding: 10px;
+
+  height: fit-content;
+
+  position: absolute;
+  padding-bottom: 0px !important;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-line-clamp: 4;
+  -moz-line-clamp: 4;
+  -ms-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* --------------------- */
+
+/* [GeometryViewer]: */
+.GeometryWrapper {
+  min-width: 100px;
+  display: flex;
+  height: 120px;
+  background: #2c3641;
+  box-shadow: 0px 0px 7px 1px rgba(22, 22, 22, 0.3);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.GeometryImgWrapper {
+  width: fit-content;
+  padding: 0px 12px;
+  height: 100%;
+  background-color: #ccdef0;
+  display: flex;
+  justify-content: center;
+}
+
+.GeometryImg {
+  height: 100%;
+  mix-blend-mode: multiply;
+}
+
+.GeometryProps {
+  max-height: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.GeometryProps ul {
+  display: flex;
+  max-height: 80%;
+  height: 80%;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+}
+
+.GeometryProps li {
+  list-style: none;
+}
+
+.GeometryProps a {
+   
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1920 - 320)));
+  color: #99a8ba;
+  width: 100%;
+  margin: 0px 15px;
+  flex: 1;
+}
+
+@media screen and (max-width: 992.98px) {
+  .DescEntryParams {
+    max-width: 55%;
+  }
+}
+
+@media (max-width: 576.98px) {
+  .ReplacementItem {
+    margin-right: 10px;
+  }
+}
+@media (max-width: 1199.98px) {
+  .GeometryProps ul {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 5px;
+    width: 120%;
+  }
+}

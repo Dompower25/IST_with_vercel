@@ -1,0 +1,117 @@
+@import '../../../variables';
+@import '../../../mixins/scroll_mixin';
+@import '../../../mixins/rfs_mixins.scss';
+@import '../../../mixins/background_mixin.scss';
+
+.mobilePageWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10px;
+
+  position: relative;
+
+  .header {
+    &.routingBack {
+      padding: 16px 0 16px 37px;
+    }
+
+    cursor: pointer;
+    position: relative;
+
+    color: $def_white;
+    @include font-size(1.375rem);
+    font-weight: 700;
+
+    padding: 16px 0 16px 16px;
+    display: flex;
+    align-items: center;
+
+    > .hiding_MMHeader_type {
+      cursor: pointer;
+      position: absolute;
+      right: 32px;
+      background-color: $def_blue_gray;
+
+      > &::after {
+        position: absolute;
+        content: '';
+        width: 12px;
+        height: 3px;
+        right: -13px;
+        background: inherit;
+        border-radius: 3px;
+        transform: rotate(-45deg);
+        transition: all 0.1s ease-in-out;
+      }
+
+      > &::before {
+        position: absolute;
+        right: -6px;
+        content: '';
+        width: 12px;
+        height: 3px;
+        background: inherit;
+        border-radius: 3px;
+        transform: rotate(45deg);
+        transition: all 0.1s ease-in-out;
+      }
+    }
+
+    > .routingBack_MMHeaderType {
+      cursor: pointer;
+      position: absolute;
+      left: -5px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: $def_page_bg;
+      box-shadow: 1px 1px 3px #151a20;
+
+      > &::after {
+        position: absolute;
+        content: '';
+        width: 11px;
+        height: 3px;
+        top: 10px;
+        left: 9px;
+        background: $def_blue_gray;
+        border-radius: 3px;
+        transform: rotate(-45deg);
+        transition: all 0.1s ease-in-out;
+      }
+
+      > &::before {
+        position: absolute;
+        content: '';
+        width: 11px;
+        height: 3px;
+        top: 17px;
+        left: 9px;
+        background: $def_blue_gray;
+        border-radius: 3px;
+        transform: rotate(45deg);
+        transition: all 0.1s ease-in-out;
+      }
+    }
+
+    .active {
+      > &::after {
+        transition: all 0.1s ease-in-out;
+        transform: rotate(45deg);
+      }
+      > &::before {
+        transition: all 0.1s ease-in-out;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .childrenLayout {
+    padding: 0 15px 0 10px;
+    height: 100%;
+    overflow: auto;
+    @include scroll($size: 2px, $track_bg: $def_page_bg);
+  }
+}

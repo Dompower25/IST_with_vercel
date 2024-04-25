@@ -1,0 +1,57 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - master
+      - dev
+
+jobs:
+  checkout:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.11.0'
+
+  gh_secrets:
+    runs-on: self-hosted
+    needs: [checkout]
+    steps:
+      - name: Set up .npmrc
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+      - name: Create env file
+        run: |
+          touch .env.local
+          echo NEXT_PUBLIC_GRAPHQL="${{ secrets.NEXT_PUBLIC_GRAPHQL }}" >> .env.local
+          echo NEXT_PUBLIC_CLOUDINARY_ACC="${{ secrets.NEXT_PUBLIC_CLOUDINARY_ACC }}" >> .env.local
+          echo NEXT_PUBLIC_PROD_IMAGES_ROOT="${{ secrets.NEXT_PUBLIC_PROD_IMAGES_ROOT }}" >> .env.local
+          echo NEXT_PUBLIC_PROD_NAME_INCLUDED_PART="${{ secrets.NEXT_PUBLIC_PROD_NAME_INCLUDED_PART }}" >> .env.local
+          echo NEXT_PUBLIC_UNUSUAL_LOCALES="${{ secrets.NEXT_PUBLIC_UNUSUAL_LOCALES }}" >> .env.local
+          echo NEXT_PUBLIC_REVIEWS_ACCESS="${{ secrets.NEXT_PUBLIC_REVIEWS_ACCESS }}" >> .env.local
+          echo NEXT_PUBLIC_CURRENCY_FETCH="${{ secrets.NEXT_PUBLIC_CURRENCY_FETCH }}" >> .env.local
+          echo NEXT_PUBLIC_CURRENCY_PERCENT_DIFF="${{ secrets.NEXT_PUBLIC_CURRENCY_PERCENT_DIFF }}" >> .env.local
+          cat .env.local
+
+  test_dev:
+    runs-on: self-hosted
+    if: github.ref == 'refs/heads/dev'
+    needs: [gh_secrets]
+    steps:
+      - name: Run tests for dev (build)
+        run: docker build -t ist-website-next-dev .
+
+  deploy_master:
+    runs-on: self-hosted
+    if: github.ref == 'refs/heads/master'
+    needs: [gh_secrets]
+    steps:
+      - name: Run the build and publish
+        run: |
+          docker build -t ist-website-next .
+          docker stop ist-website-next || true
+          docker rm ist-website-next || true
+          docker run -d -p 3000:3000 --name ist-website-next ist-website-next

@@ -1,0 +1,192 @@
+@import '../scss/variables';
+@import '../scss/mixins/rfs_mixins';
+@import '../scss/mixins/background_mixin';
+@import '../scss/mixins/ratioBox/ratio-box';
+@import './common.scss';
+@import '../scss/mixins/textEllipsing.scss';
+
+$trans_speed: 0.3s;
+
+@mixin btn_sizing_mixin($height: 50px, $sidePaddings: 28px, $fontSize: 1rem) {
+  & {
+    @include font-size($fontSize);
+    padding: 0px $sidePaddings;
+    height: $height;
+    line-height: $height -1px;
+  }
+}
+
+.btn {
+  color: $pure_white;
+  transition: $trans_speed box-shadow;
+  cursor: pointer;
+  overflow: hidden;
+
+  .btn_title {
+    font-weight: 500;
+    @include text-ellipsing();
+    word-break: normal;
+  }
+}
+
+.styling_default {
+  box-shadow: $def_styling_shadows;
+}
+
+// sizes
+.size_S {
+  @include btn_sizing_mixin(
+    $height: 50px,
+    $sidePaddings: 28px,
+    $fontSize: 1rem
+  );
+}
+
+.size_M {
+  @include btn_sizing_mixin(
+    $height: 57px,
+    $sidePaddings: 33px,
+    $fontSize: 1.188rem
+  );
+}
+
+.size_L {
+  @include btn_sizing_mixin(
+    $height: 66px,
+    $sidePaddings: 39px,
+    $fontSize: 1.375rem
+  );
+}
+
+// accents
+.accent_important {
+  background: $def_blue;
+  border: 2px solid $def_blue;
+}
+
+.accent_secondary {
+  background: inherit;
+  border: 2px solid $def_light_blue;
+  box-sizing: border-box;
+}
+
+.accent_inactive {
+  background: $def_blue_gray;
+}
+
+// styling
+.hover:hover {
+  box-shadow: $def_styling_shadows;
+  transition: $trans_speed box-shadow;
+}
+
+.focus:focus {
+  box-shadow: $def_styling_shadows;
+  transition: $trans_speed box-shadow;
+}
+
+.active:active {
+  box-shadow: $def_styling_shadows;
+  transition: $trans_speed box-shadow;
+}
+
+.constantly {
+  box-shadow: $def_styling_shadows;
+  transition: $trans_speed box-shadow;
+}
+
+// solid
+.solid_gradient {
+  border: 2px solid $def_blue_gray;
+  background: linear-gradient(
+    96deg,
+    $def_gradient_color_one 0%,
+    $def_gradient_color_second 100%
+  );
+}
+
+.solid_filling {
+  background: $def_page_bg;
+  box-shadow: $def_styling_filling_shadow;
+  border: none;
+
+  &.hover:hover {
+    box-shadow:
+      2px 2px 3px 0px $def_filling_color_for_shadow_one,
+      -2px -2px 3px 0px $def_filling_color_for_shadow_second;
+    transition: $trans_speed box-shadow;
+  }
+
+  &.focus:focus {
+    box-shadow:
+      2px 2px 3px 0px $def_filling_color_for_shadow_one,
+      -2px -2px 3px 0px $def_filling_color_for_shadow_second;
+    transition: $trans_speed box-shadow;
+  }
+
+  &.active:active {
+    box-shadow:
+      2px 2px 3px 0px $def_filling_color_for_shadow_one,
+      -2px -2px 3px 0px $def_filling_color_for_shadow_second;
+    transition: $trans_speed box-shadow;
+  }
+
+  &.constantly {
+    box-shadow:
+      2px 2px 3px 0px $def_filling_color_for_shadow_one,
+      -2px -2px 3px 0px $def_filling_color_for_shadow_second;
+  }
+}
+
+// MOBILE TRIGGER SIZE HANDLING
+// "SM_576" | "XXL_1400" | "XL_1200" | "LG_992" | "MD_768"
+
+@media screen and (max-width: 575.98px) {
+  .SM_576 {
+    @include btn_sizing_mixin(
+      $height: 50px,
+      $sidePaddings: 28px,
+      $fontSize: 1rem
+    );
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .MD_768 {
+    @include btn_sizing_mixin(
+      $height: 50px,
+      $sidePaddings: 28px,
+      $fontSize: 1rem
+    );
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  .LG_992 {
+    @include btn_sizing_mixin(
+      $height: 50px,
+      $sidePaddings: 28px,
+      $fontSize: 1rem
+    );
+  }
+}
+
+@media screen and (max-width: 1199.98px) {
+  .XL_1200 {
+    @include btn_sizing_mixin(
+      $height: 50px,
+      $sidePaddings: 28px,
+      $fontSize: 1rem
+    );
+  }
+}
+
+@media screen and (max-width: 1399.98px) {
+  .XXL_1400 {
+    @include btn_sizing_mixin(
+      $height: 50px,
+      $sidePaddings: 28px,
+      $fontSize: 1rem
+    );
+  }
+}

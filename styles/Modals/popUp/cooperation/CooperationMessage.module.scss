@@ -1,0 +1,53 @@
+@import '../../../variables.scss';
+@import '../../../mixins//rfs_mixins.scss';
+
+.modalBox {
+  max-width: 484px;
+  width: 100%;
+  // padding: 0 32px;
+
+  @media screen and (max-width: 539px) {
+    // padding: 0 15px;
+  }
+
+  .imageBlock {
+    top: 80px;
+    left: 0;
+    height: 200px;
+
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 200px;
+      width: 100%;
+      display: block;
+      content: '';
+
+      @media screen and (max-width: 539px) {
+        background: linear-gradient(
+          180deg,
+          #2c3641 6.65%,
+          rgba(44, 54, 65, 0) 51.3%,
+          #2c3641 91.15%
+        );
+      }
+    }
+  }
+
+  .mainText {
+    margin-top: 90px;
+    color: $def_white;
+    @include font-size(1rem);
+    font-weight: 500;
+    max-width: 300px;
+  }
+
+  .button {
+    margin: 10px 0 0 0;
+  }
+}

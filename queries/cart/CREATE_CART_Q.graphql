@@ -1,0 +1,6 @@
+mutation createCartCollectionItem($data: create_cartCollection_input!) {
+  create_cartCollection_item(data: $data) {
+    id
+    cart_model
+  }
+}

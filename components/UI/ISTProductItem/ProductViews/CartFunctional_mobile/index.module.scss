@@ -1,0 +1,106 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins/rfs_mixins';
+@import '../../../scss/mixins/ratioBox/ratio-box';
+@import '../../../scss/mixins/textEllipsing';
+
+$border_radius: 20px;
+
+.CartItemContainer {
+  min-width: min-content;
+
+  background: $def_page_bg;
+  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.21);
+  border-radius: $border_radius;
+  height: fit-content;
+  position: relative;
+
+  .productContainer {
+    height: fit-content;
+    display: flex;
+
+    .ItemImg {
+      width: 35%;
+      padding: 20px 0;
+
+      @include ratio-box(1/1);
+      overflow: hidden;
+      border-radius: $border_radius 0px 0px $border_radius;
+      cursor: pointer;
+    }
+
+    .ItemDescription {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px 5px 10px 15px;
+
+      width: 65%;
+
+      .itemData {
+        .title {
+          font-style: normal;
+          font-weight: 500;
+          @include font-size(1.4rem);
+          line-height: 1.2;
+          color: $def_white;
+          height: fit-content;
+          margin: 0;
+
+          max-width: calc(100% - 50px);
+          overflow: hidden;
+
+          word-wrap: break-word;
+          @include text-ellipsing(2);
+        }
+
+        .price {
+          .priceValue {
+            text-align: left;
+
+            width: fit-content;
+            padding-right: 5px;
+
+            height: fit-content;
+
+            word-wrap: anywhere;
+            @include text-ellipsing(1);
+            overflow: hidden;
+          }
+
+          span {
+            width: auto;
+          }
+
+          font-style: normal;
+          font-weight: 500;
+          @include font-size(1.2rem);
+          color: $def_blue_gray;
+          display: flex;
+
+          width: calc(100% - 55px);
+          margin: 5px 0;
+        }
+      }
+    }
+
+    .CheckBoxBlock {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      display: block;
+    }
+
+    .qAndPrice {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .qEditor {
+        width: 80%;
+        min-width: 140px;
+        max-width: 175px;
+      }
+    }
+  }
+}

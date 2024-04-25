@@ -1,0 +1,23 @@
+query getFullProductList($limit: Int = 100, $offset: Int = 0) {
+  Products(offset: $offset, limit: $limit) {
+    id
+
+    product_name_ru
+    product_name
+
+    image_url
+    slug
+
+    vend_code
+    weight
+    text_description
+
+    form_factor_image
+    sizes
+    price
+
+    analogue_text
+    included_text
+    replacement_text
+  }
+}

@@ -1,0 +1,33 @@
+@import '../variables';
+
+@mixin scroll(
+  $size: 5px,
+  $thumb_radius: 15px,
+  $track_radius: 0px,
+  $thumb_bg: $def_light_blue,
+  $track_bg: $def_page_bg,
+  $direction: ltr
+) {
+  & {
+    direction: $direction;
+  }
+
+  & * {
+    direction: ltr;
+  }
+
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $track_bg;
+    border-radius: $track_radius;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb_bg;
+    border-radius: $thumb_radius;
+  }
+}

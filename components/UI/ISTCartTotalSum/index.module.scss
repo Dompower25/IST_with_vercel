@@ -1,0 +1,158 @@
+@import '../scss/variables.scss';
+@import '../scss/mixins/rfs_mixins';
+@import '../scss/mixins/background_mixin';
+@import '../scss/mixins/ratioBox/ratio-box';
+@import '../scss/mixins/textEllipsing.scss';
+@import '../scss/mixins/scroll_mixin.scss';
+
+.cart {
+  width: 100%;
+  padding: 24px 31px;
+  background: $def_page_bg;
+  box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.21);
+  border-radius: 30px;
+  color: $def_white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include font-size(1.25rem);
+
+  .mobileTotalValue {
+    display: none;
+  }
+
+  .cartLabel {
+    @include font-size(1.688rem);
+    font-weight: 700;
+    margin: 0 0 8px 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    .yourCart {
+      display: flex;
+      align-items: center;
+      .productsQuantity {
+        background: $def_blue;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+        border-radius: 16px;
+        padding: 2px 13px;
+        margin-left: 10px;
+        @include font-size(1.438rem);
+      }
+    }
+
+    .arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  .prodSaleBox {
+    display: flex;
+    flex-direction: column;
+    margin: 8px 0 15px 0;
+
+    .prod,
+    .sale {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .sale {
+      opacity: 0.5;
+    }
+
+    .title,
+    .total {
+      @include font-size(1.25rem);
+      font-weight: 500;
+      > span {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .sumBox {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 0 0;
+    .totalSum {
+      margin-bottom: 8px;
+      @include font-size(1.438rem);
+      font-weight: 600;
+      align-self: flex-end;
+      & > span {
+        margin: 0 5px 0 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .mobileTotalValue {
+    padding: 0 0 0 10px;
+    width: 100%;
+    max-width: 50%;
+
+    display: flex !important;
+    align-items: center;
+    overflow: auto;
+    @include scroll();
+
+    .sumTitle {
+      width: 100%;
+      word-break: break-all;
+      @include text-ellipsing();
+      height: min-content;
+      overflow: hidden;
+    }
+    .sumValue {
+      width: fit-content;
+      margin: 0px 2.5px 0px 10px;
+    }
+  }
+
+  .cart {
+    border-radius: 15px 15px 0px 0px;
+    padding: 15px 20px;
+
+    .cartLabel {
+      display: flex;
+      @include font-size(1.25rem);
+      margin-bottom: 15px;
+
+      .yourCart {
+        padding-right: 10px;
+        line-height: 130%;
+        width: max-content;
+        .productsQuantity {
+          @include font-size(1rem);
+        }
+      }
+    }
+
+    .sumBox {
+      display: flex;
+      flex-direction: row-reverse !important;
+      justify-content: space-between;
+
+      .totalSum {
+        display: none;
+      }
+
+      .discountMobile {
+        opacity: 0.5 !important;
+      }
+    }
+  }
+
+  .prodSaleBox {
+    display: none !important;
+  }
+
+  .openSaleBox {
+    display: flex !important;
+  }
+}

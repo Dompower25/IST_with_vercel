@@ -1,0 +1,21 @@
+@import "../../styles/variables.scss";
+
+.landingContent {
+  width: 100%;
+  z-index: 0;
+  position: relative;
+}
+
+.contentContainer {
+  background: $def_page_bg;
+  z-index: 0;
+}
+
+.stickyFooterContainer {
+  width: 100%;
+  z-index: -1;
+  position: sticky !important;
+  min-height: unset !important;
+  bottom: 0;
+  padding-top: 30px;
+}

@@ -1,0 +1,306 @@
+@import '../UI/scss/variables.scss';
+@import '../UI/scss/mixins/rfs_mixins.scss';
+@import '../UI/scss/mixins/scroll_mixin.scss';
+
+.trackerBody {
+  position: fixed;
+
+  right: 0px;
+  bottom: 0px;
+
+  width: 100% !important;
+  height: 80px;
+
+  padding: 0px 15px;
+  padding-bottom: 10px !important;
+
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), 37%, $def_dark_middle);
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  //INACTIVE LEVEL
+  :global(.trackerPoint) {
+    order: 1;
+
+    display: flex;
+    margin: 0;
+    cursor: pointer;
+
+    width: 60px;
+    height: 60px;
+
+    margin-left: 14px !important;
+
+    //border: solid 1px blue;
+
+    :global(.trackerPoint_content) {
+      width: 100%;
+      flex-direction: column;
+
+      justify-content: center;
+      align-items: center;
+
+      display: flex;
+
+      min-height: 30px;
+
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(21, 26, 32, 0.7);
+      background: $def_page_bg;
+      padding: 10px 10px;
+
+      p {
+        align-self: center;
+        @include font-size(2.5rem);
+        color: $def_blue_gray;
+        font-weight: 900;
+
+        line-height: 100%;
+
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        align-self: flex-start;
+        color: $def_blue_gray;
+        max-width: 70%;
+        font-weight: 900;
+        @include font-size(1.2rem);
+        line-height: 1.5rem;
+
+        display: none;
+
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    &:global(.is_active_position) {
+      order: 0;
+      width: 85px;
+      min-height: 75px;
+      height: fit-content;
+
+      margin-right: auto;
+      margin-left: 0px !important;
+
+      //border: solid 1px red;
+
+      :global(.trackerPoint_content) {
+        background: $def_dark;
+        display: flex;
+        justify-content: flex-start;
+        height: 100%;
+        overflow: hidden;
+        padding: 7px 7px;
+
+        & p {
+          @include font-size(4rem);
+          align-self: flex-start;
+          margin-top: -5px;
+          color: $def_white;
+        }
+
+        & a {
+          @include font-size(0.85rem);
+          font-weight: 600 !important;
+          display: block;
+          line-height: 100%;
+          margin-top: 3px;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 575.98px) {
+    width: fit-content !important;
+    background: none;
+
+    :global(.trackerPoint_content) {
+      padding: 9px !important;
+      & p {
+        @include font-size(2rem !important);
+      }
+    }
+
+    :global(.is_active_position) {
+      width: 95px !important;
+      height: fit-content !important;
+      min-height: 85px !important;
+
+      :global(.trackerPoint_content) {
+        & p {
+          @include font-size(2.7rem !important);
+        }
+
+        & a {
+          @include font-size(0.93rem !important);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 959.98px) {
+    align-items: flex-start;
+    flex-direction: column;
+    height: 80%;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-45%);
+    padding: 0px;
+
+    width: 5.5% !important;
+
+    :global(.trackerPoint) {
+      margin-left: 0px !important;
+      min-width: fit-content;
+      margin-top: 10px;
+    }
+
+    :global(.trackerPoint_content) {
+      border-radius: 0px 15px 15px 0px !important;
+    }
+
+    :global(.is_active_position) {
+      height: fit-content !important;
+      min-height: 85px !important;
+      width: 100% !important;
+
+      margin: auto 0;
+      margin-top: 0px !important;
+
+      :global(.trackerPoint_content) {
+        background: rgba(21, 26, 32, 0.8) !important;
+        border-radius: 0px 15px 15px 0px;
+
+        & p {
+          @include font-size(2.7rem !important);
+        }
+
+        & a {
+          @include font-size(0.85rem !important);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1199.98px) {
+    width: 7.5% !important;
+    //border: solid 1px yellow;
+
+    :global(.trackerPoint) {
+      padding-top: 100%;
+      width: 100%;
+
+      min-height: 0;
+      height: 0;
+
+      position: relative;
+    }
+
+    :global(.trackerPoint):hover {
+      :global(.trackerPoint_content) {
+        opacity: 1 !important;
+        transition: 0.2s opacity;
+      }
+    }
+
+    :global(.trackerPoint_content) {
+      opacity: 0.7;
+      transition: 0.2s opacity;
+
+      border-radius: 15px !important;
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      overflow: hidden !important;
+
+      top: 0;
+      left: 0;
+
+      box-shadow: 4px 4px 4px rgba(21, 26, 32, 0.5) !important;
+
+      display: flex;
+      flex-direction: column;
+
+      overflow: unset !important;
+
+      & p {
+        @include font-size(2.2rem !important);
+        align-self: flex-end !important;
+        display: flex;
+      }
+
+      & a {
+        @include font-size(0.85rem !important);
+        display: block !important;
+        line-height: 110% !important;
+        margin-top: 5px !important;
+      }
+    }
+
+    :global(.is_active_position) {
+      :global(.trackerPoint_content) {
+        opacity: 1 !important;
+        height: min-content !important;
+        min-height: 100%;
+        background: $def_page_bg !important;
+
+        & p {
+          @include font-size(3.5rem !important);
+          align-self: flex-start !important;
+        }
+
+        & a {
+          @include font-size(0.9rem !important);
+          margin-top: 0px !important;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1399.98px) {
+    width: 9.5% !important;
+    max-width: 165px !important;
+    padding: 0px 15px;
+
+    :global(.trackerPoint_content) {
+      max-height: 100% !important;
+      height: fit-content !important;
+
+      & p {
+        @include font-size(2.5rem !important);
+      }
+      & a {
+        @include font-size(1rem !important);
+        font-weight: 700 !important;
+      }
+    }
+
+    :global(.is_active_position) {
+      display: flex;
+      justify-content: center;
+      align-items: center !important;
+
+      :global(.trackerPoint_content) {
+        padding: 10px !important;
+        max-height: fit-content !important;
+
+        & p {
+          @include font-size(5rem !important);
+        }
+        & a {
+          @include font-size(1.1rem !important);
+          font-weight: 800 !important;
+        }
+      }
+    }
+  }
+}

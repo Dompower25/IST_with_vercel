@@ -1,0 +1,8 @@
+query getPublication($id: String!){
+    publications(filter: {id: {_eq: $id}}){
+        id,
+        content,
+        date_created,
+        title
+    }
+}

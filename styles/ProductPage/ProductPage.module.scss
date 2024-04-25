@@ -1,0 +1,319 @@
+@import "../../components/UI/scss/mixins/ratioBox/_ratio-box.scss";
+@import "../../components/UI/scss/variables.scss";
+@import "../../components/UI/scss/mixins/rfs_mixins.scss";
+@import "../../components/UI/scss/mixins/scroll_mixin.scss";
+
+.ProductBlock {
+  width: 100%;
+  height: fit-content;
+  padding-bottom: 15px;
+  padding-top: 29px;
+  background: #2c3641;
+  box-shadow: 14px 14px 22px -13px rgba(0, 0, 0, 0.21);
+  border-radius: 46px 46px 46px 57px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  font-weight: 500;
+  @include font-size(1.7rem);
+  color: $def_white;
+  padding-bottom: 20px;
+  line-height: 125%;
+
+  span {
+    font-style: normal;
+    font-weight: 500;
+    @include font-size(1.2rem);
+    color: #76ace7;
+    padding: 2.5px 0px;
+  }
+}
+
+.Image_and_replacement {
+  @include ratio-box(1);
+  width: 450px;
+  display: flex;
+}
+.ProductImage {
+  width: inherit;
+  height: inherit;
+  position: relative;
+  overflow: hidden;
+  border-radius: 48px;
+  box-shadow: 0px 0px 12px $def_blue;
+  display: grid;
+  align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.ProductReplacement {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0px 30px;
+}
+
+.AdditionalProductsBlock {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  background: #2c3641;
+  box-shadow: 14px 14px 22px -13px rgba(0, 0, 0, 0.21);
+  border-radius: 0px 46px 46px 0px;
+  position: relative;
+  overflow: hidden;
+}
+.AdditionalProductsBlock p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc(19px + (24 - 19) * ((100vw - 300px) / (1920 - 320)));
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.AdditionalProductsBlock::after {
+  content: "";
+  width: 30%;
+  height: calc(100% - 8px);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  background: linear-gradient(270deg, #2b3540 0%, rgba(44, 54, 65, 0) 80.28%);
+}
+
+.AdditionalProductsBlock::before {
+  content: "";
+  width: 20%;
+  height: calc(100% - 38px);
+  position: absolute;
+  left: 0;
+  top: 30px;
+  z-index: 1;
+  background: linear-gradient(90deg, #2b3540 0%, rgba(44, 54, 65, 0) 30.28%);
+}
+
+/* ProductDescription */
+
+.ProductDescription_wrapper {
+  height: fit-content;
+  width: 100%;
+  position: relative;
+  padding-top: 30px;
+  margin-bottom: 50px;
+}
+
+.ProductDescription {
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
+  min-height: 50%;
+
+  background: $def_page_bg;
+  box-shadow: 14px 14px 22px -13px rgba(0, 0, 0, 0.21);
+  border-radius: 46px 46px 30px 44px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+
+  .availableStatus {
+    padding-bottom: 15px;
+  }
+}
+
+.ParamsWrapper {
+  @include scroll();
+  padding: 0 25px;
+  height: 100%;
+  display: block;
+  overflow-y: auto;
+  position: relative;
+}
+
+.CharacteristicsTitle {
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(17px + (21 - 17) * ((100vw - 300px) / (1920 - 320)));
+  line-height: 26px;
+  color: #ffffff;
+}
+
+.ParamsSpecifics {
+  width: inherit;
+  height: fit-content;
+}
+
+.GeometryBlock {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.DetailedDescription {
+  max-width: 100%;
+  overflow-x: hidden;
+  display: flex;
+
+  flex-direction: column;
+  word-wrap: break-word;
+  @include font-size(1.15rem);
+  color: $def_white;
+  font-style: normal;
+  font-weight: 500;
+
+  p {
+    color: $pure_white;
+    font-style: normal;
+    font-weight: 500;
+    @include font-size(1.25rem);
+    margin: 0;
+    margin-bottom: 10px !important;
+  }
+}
+
+.ProductActions {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 11px;
+  margin-top: 15px;
+}
+.monySymbol {
+  display: none;
+}
+.ProductPrice {
+  padding-right: 19px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc(18px + (23 - 18) * ((100vw - 300px) / (1920 - 320)));
+  color: #ffffff;
+  white-space: pre-wrap;
+  & > span {
+    padding: 5px;
+  }
+}
+
+.Actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  margin-top: 8px;
+}
+
+.Actions button {
+  width: 50%;
+  margin: 8px;
+  height: 50px;
+  cursor: pointer;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1920 - 320)));
+  color: #ffffff;
+}
+
+.Actions button.active {
+  box-shadow: 0px 0px 5px #76ace7;
+  transition: 0.3s;
+  background: #76ace7 !important;
+}
+
+.sendOrderAction.active {
+  background: #76ace7 !important;
+}
+
+.slug_PuBaseList {
+  width: 90%;
+  padding: 0px 15px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(18px + (20 - 18) * ((100vw - 300px) / (1920 - 320)));
+  color: #ffffff;
+  list-style: none;
+  margin-bottom: 15px;
+  max-height: 50vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.slug_PuBaseList li {
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 5px 20px;
+  border-radius: 15px;
+  background: #414f5f;
+  transition: 0.3s;
+  margin-bottom: 5px;
+}
+
+.slug_PuBaseList li p {
+  margin: 10px 0px;
+}
+
+.slug_PuBaseList li button {
+  font-size: 18px;
+  margin-bottom: 10px;
+  background: #2c3641;
+  color: #76ace7;
+  border: solid 2px #76ace7;
+  border-radius: 10px;
+  font-weight: bold;
+  outline: none;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.slug_PuBaseList li button:hover {
+  transition: 0.2s;
+  background: #76ace7;
+  color: #2c3641;
+}
+
+/*.slug_PuBaseList li:hover{*/
+/*    transition: 0.3s;*/
+/*    background-color: #151A20;*/
+/*}*/
+
+.slug_PuBaseList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.slug_PuBaseList::-webkit-scrollbar-track {
+  background-color: #3f4d5b;
+  border-radius: 300px 300px 300px 300px;
+}
+
+.slug_PuBaseList::-webkit-scrollbar-thumb {
+  background-color: #76ace7;
+  border-radius: 9px;
+  background-clip: content-box;
+}
+
+.Actions button:hover {
+  transition: 0.3s;
+  box-shadow: 0px 0px 5px #76ace7;
+}
+
+.fsImageViewer {
+  width: 80vw;
+  min-height: 10px;
+  background: #000;
+}

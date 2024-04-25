@@ -1,0 +1,114 @@
+@import '../../scss/variables';
+@import '../../scss/mixins/background_mixin';
+@import '../../scss/mixins/rfs_mixins';
+
+.container {
+  width: 100%;
+  position: relative;
+  min-width: 250px;
+  @include gradient_bg($background: gradient, $radius: 20px);
+  box-sizing: border-box;
+  -webkit-box-shadow: 0px 0px 6px $def_light_blue;
+  -moz-box-shadow: 0px 0px 6px $def_light_blue;
+  box-shadow: 0px 0px 6px $def_light_blue;
+  padding: 18px 20px;
+  margin-bottom: 13px;
+
+  > .dot {
+    position: absolute;
+    border-radius: 50%;
+    left: 21px;
+    margin-top: 7px;
+    width: 8px;
+    height: 8px;
+    background: $def_light_blue;
+    box-shadow: 0px 0px 4px $def_dark;
+    animation: dotActive 0.15s ease-in-out;
+  }
+
+  .titleTransition {
+    margin-left: 19px;
+    transition: margin 0.15s ease-in-out;
+  }
+
+  > .title {
+    position: relative;
+    font-weight: 600;
+    @include font-size(1.2rem);
+    line-height: 23px;
+    color: $pure_white;
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    cursor: pointer;
+    padding: 0px 10px 0px 0px;
+    transition: margin 0.15s ease-in-out;
+
+    > .vector {
+      position: relative;
+      top: 10px;
+      right: 11px;
+      background-color: $def_blue_gray;
+
+      > &::after {
+        position: absolute;
+        content: '';
+        width: 12px;
+        height: 3px;
+        right: -13px;
+        background: inherit;
+        border-radius: 3px;
+        transform: rotate(-45deg);
+        transition: all 0.1s ease-in-out;
+      }
+
+      > &::before {
+        position: absolute;
+        right: -6px;
+        content: '';
+        width: 12px;
+        height: 3px;
+        background: inherit;
+        border-radius: 3px;
+        transform: rotate(45deg);
+        transition: all 0.1s ease-in-out;
+      }
+    }
+    .active {
+      > &::after {
+        transition: all 0.1s ease-in-out;
+        transform: rotate(45deg);
+      }
+      > &::before {
+        transition: all 0.1s ease-in-out;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .ch_wrapper {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+@keyframes dotActive {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes describingFilterActive {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

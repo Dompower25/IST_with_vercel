@@ -1,0 +1,67 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins/rfs_mixins';
+@import '../../../scss/mixins/ratioBox/ratio-box';
+
+.productCardVariant_Inline {
+  width: 100%;
+
+  > .cardInline {
+    display: flex;
+    max-width: 375px;
+    min-width: 300px;
+    max-height: 187px;
+    // box-sizing: border-box;
+    // background: $def_dark;
+    background: rgba(82, 86, 92, 0.5);
+    box-shadow: 4px 4px 5px rgba(21, 26, 32, 0.5);
+    border-radius: 15px;
+    // overflow: hidden;
+    padding: 10px 15px 10px 10px;
+
+    .imageBox {
+      width: 163px;
+      margin-right: 20px;
+      border-radius: 20px;
+      box-sizing: border-box;
+      overflow: hidden;
+      // border: 1px solid white;
+    }
+
+    .productInformationInline {
+      width: 80%;
+      border-radius: 15px;
+      border: none !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .productTitle {
+        font-weight: 600;
+        @include font-size(1.375);
+
+        line-height: 26px;
+        color: $def_white;
+      }
+
+      .price {
+        font-weight: 600;
+        @include font-size(1.063rem);
+        line-height: 20px;
+        color: $def_white;
+      }
+
+      .vendCode {
+        font-weight: 600;
+        @include font-size(0.875em);
+        line-height: 20px;
+        color: $def_light_blue;
+      }
+    }
+  }
+}

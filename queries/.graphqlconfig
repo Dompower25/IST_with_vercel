@@ -1,0 +1,15 @@
+{
+  "name": "IST & DIRECTUS scheme",
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "${NEXT_PUBLIC_GRAPHQL}",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": false
+      }
+    }
+  }
+}

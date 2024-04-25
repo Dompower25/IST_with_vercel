@@ -1,0 +1,103 @@
+@import '../../scss/variables';
+@import '../../scss/mixins/rfs_mixins';
+@import '../../scss/mixins/ratioBox/ratio-box';
+
+.ActionsContainer {
+  &.blocked {
+    position: relative;
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    button {
+      color: $def_blue_gray !important;
+    }
+    input {
+      color: $def_blue_gray !important;
+    }
+    .lButton_blue {
+      background: $def_blue_gray !important;
+    }
+  }
+
+  width: 100%;
+  height: fit-content;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $def_page_bg;
+
+  .btnContainer {
+    width: 50%;
+    position: relative;
+    @include ratio-box(1/1);
+
+    button {
+      border: none;
+      cursor: pointer;
+
+      width: 100%;
+      height: 100%;
+
+      color: $def_white;
+      background-color: $def_dark;
+
+      font-style: normal;
+      font-weight: 500;
+      @include font-size(1.5rem);
+      display: block;
+      border-radius: 10px;
+      z-index: 0;
+      transition: 0.3s;
+
+      &:hover {
+        color: $def_light_blue;
+        transition: 0.3s;
+      }
+    }
+
+    .lButton_blue {
+      background-color: $def_blue;
+    }
+  }
+
+  .inputContainer {
+    width: 100%;
+    @include ratio-box(2/1);
+
+    input {
+      color: $def_white;
+
+      font-style: normal;
+      font-weight: 500;
+      @include font-size(1.5rem);
+      text-align: center;
+
+      width: calc(100% - 10px);
+      margin: 0 auto;
+
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      background-color: $def_dark;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      &[type='number'] {
+        -moz-appearance: textfield;
+      }
+    }
+  }
+}

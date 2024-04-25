@@ -1,0 +1,224 @@
+@import '../../scss/variables';
+@import '../../scss/mixins/background_mixin';
+
+.titleHandlerBlock {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+
+  top: -10px;
+  left: 0;
+}
+
+.mobile_transfer {
+  display: none;
+}
+
+.default_handler {
+  display: block;
+}
+
+.transferVector_active {
+  transform: rotate(-180deg);
+}
+
+@media screen and (max-width: 1399.98px) {
+  .XXL_1400 {
+    @include gradient_bg(
+      $background:
+        linear-gradient(
+          -170.58deg,
+          #2c3641 20.37%,
+          rgba(22, 28, 34, 0.5) 113.45%
+        ),
+      $radius: 20px,
+      $border_s: 0px
+    );
+    border-radius: 20px !important;
+    border: none !important;
+    overflow: hidden !important;
+
+    box-shadow: 1px -1px 5px rgba(22, 28, 34, 0.47);
+
+    .vector_XXL_1400 {
+      position: relative;
+      background-color: $def_blue_gray;
+      transform-origin: (5px 0px 0px);
+      transform: rotate(-90deg);
+    }
+
+    .ch_wrapper_hider_XXL_1400 {
+      display: none !important;
+    }
+
+    .mobile_transfer_XXL_1400 {
+      display: block;
+    }
+
+    .default_handler_XXL_1400 {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1199.98px) {
+  .XL_1200 {
+    @include gradient_bg(
+      $background:
+        linear-gradient(
+          -170.58deg,
+          #2c3641 20.37%,
+          rgba(22, 28, 34, 0.5) 113.45%
+        ),
+      $radius: 20px,
+      $border_s: 0px
+    );
+    box-shadow: 1px -1px 5px rgba(22, 28, 34, 0.47);
+
+    border-radius: 20px !important;
+    border: none !important;
+    overflow: hidden !important;
+
+    .vector_XL_1200 {
+      position: relative;
+      background-color: $def_blue_gray;
+      transform-origin: (5px 0px 0px);
+      transform: rotate(-90deg);
+    }
+
+    .ch_wrapper_hider_XL_1200 {
+      display: none !important;
+    }
+
+    .mobile_transfer_XL_1200 {
+      display: block;
+    }
+
+    .default_handler_XL_1200 {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  .LG_992 {
+    @include gradient_bg(
+      $background:
+        linear-gradient(
+          -170.58deg,
+          #2c3641 20.37%,
+          rgba(22, 28, 34, 0.5) 113.45%
+        ),
+      $radius: 20px,
+      $border_s: 0px
+    );
+
+    box-shadow: 1px -1px 5px rgba(22, 28, 34, 0.47);
+
+    border-radius: 20px !important;
+    border: none !important;
+    overflow: hidden !important;
+
+    .vector_LG_992 {
+      position: relative;
+      background-color: $def_blue_gray;
+      transform-origin: (5px 0px 0px);
+      transform: rotate(-90deg);
+
+      &.vector_active {
+        transform: rotate(90deg) !important;
+      }
+    }
+
+    .ch_wrapper_hider_LG_992 {
+      display: none !important;
+    }
+
+    .mobile_transfer_LG_992 {
+      display: block;
+    }
+
+    .default_handler_LG_992 {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .MD_768 {
+    @include gradient_bg(
+      $background:
+        linear-gradient(
+          -170.58deg,
+          #2c3641 20.37%,
+          rgba(22, 28, 34, 0.5) 113.45%
+        ),
+      $radius: 20px,
+      $border_s: 0px
+    );
+    box-shadow: 1px -1px 5px rgba(22, 28, 34, 0.47);
+
+    border-radius: 20px !important;
+    border: none !important;
+    overflow: hidden !important;
+
+    .vector_MD_768 {
+      position: relative;
+      background-color: $def_blue_gray;
+      transform-origin: (5px 0px 0px);
+      transform: rotate(-90deg);
+    }
+
+    .ch_wrapper_hider_MD_768 {
+      display: none !important;
+    }
+
+    .mobile_transfer_MD_768 {
+      display: block;
+    }
+
+    .default_handler_MD_768 {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .SM_576 {
+    @include gradient_bg(
+      $background:
+        linear-gradient(
+          -170.58deg,
+          #2c3641 20.37%,
+          rgba(22, 28, 34, 0.5) 113.45%
+        ),
+      $radius: 20px,
+      $border_s: 0px
+    );
+    box-shadow: 1px -1px 5px rgba(22, 28, 34, 0.47);
+
+    border-radius: 20px !important;
+    border: none !important;
+    overflow: hidden !important;
+
+    .vector_SM_576 {
+      position: relative;
+      background-color: $def_blue_gray;
+      transform-origin: (5px 0px 0px);
+      transform: rotate(-90deg);
+    }
+
+    .ch_wrapper_hider_SM_576 {
+      display: none !important;
+    }
+
+    .mobile_transfer_SM_576 {
+      display: block;
+    }
+
+    .default_handler_SM_576 {
+      display: none;
+    }
+  }
+}

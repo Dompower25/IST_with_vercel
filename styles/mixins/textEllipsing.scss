@@ -1,0 +1,14 @@
+@mixin text-ellipsing($ellipsing_line: 1) {
+  & {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-line-clamp: $ellipsing_line;
+    -moz-line-clamp: $ellipsing_line;
+    -ms-line-clamp: $ellipsing_line;
+    line-clamp: $ellipsing_line;
+    text-overflow: ellipsis;
+  }
+}
